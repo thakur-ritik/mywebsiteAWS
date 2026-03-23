@@ -1,7 +1,7 @@
 {
-  "name": "my-dynamic-website",
+  "name": "mywebsiteAWS",
   "version": "1.0.0",
-  "description": "Professional dynamic website for Azure deployment",
+  "description": "Professional dynamic website for AWS EC2 deployment",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
