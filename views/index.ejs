@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<%- include('partials/nav') %>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="badge">✦ Trusted by 150+ clients worldwide</div>
+    <h1>We Build <span class="accent">Digital</span><br/>Experiences That Matter</h1>
+    <p>NexaWave crafts high-performance web solutions, mobile apps, and cloud infrastructure that drive real business results.</p>
+    <div class="hero-btns">
+      <a href="/services" class="btn btn-primary">Explore Services</a>
+      <a href="/contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll">↓ scroll</div>
+</section>
+
+<!-- STATS (loaded dynamically via JS) -->
+<section class="stats-section">
+  <div class="container stats-grid" id="stats-grid">
+    <div class="stat-card"><span class="stat-num" data-target="150">0</span><span class="stat-label">Happy Clients</span></div>
+    <div class="stat-card"><span class="stat-num" data-target="320">0</span><span class="stat-label">Projects Done</span></div>
+    <div class="stat-card"><span class="stat-num" data-target="28">0</span><span class="stat-label">Countries Served</span></div>
+    <div class="stat-card"><span class="stat-num" data-target="8">0</span><span class="stat-label">Years Active</span></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2>Our Core Services</h2>
+      <p>Everything you need to build, grow, and scale your digital presence.</p>
+    </div>
+    <div class="services-grid">
+      <% services.forEach(s => { %>
+      <div class="service-card">
+        <div class="service-icon"><%= s.icon %></div>
+        <h3><%= s.title %></h3>
+        <p><%= s.desc %></p>
+        <a href="/services" class="card-link">Learn more →</a>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM PREVIEW -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The People</span>
+      <h2>Meet Our Team</h2>
+    </div>
+    <div class="team-grid">
+      <% teamMembers.forEach(m => { %>
+      <div class="team-card">
+        <div class="team-avatar"><%= m.emoji %></div>
+        <h4><%= m.name %></h4>
+        <span><%= m.role %></span>
+      </div>
+      <% }) %>
+    </div>
+    <div class="center-btn">
+      <a href="/about" class="btn btn-outline">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Let's turn your idea into a powerful digital product.</p>
+    <a href="/contact" class="btn btn-primary">Contact Us Today</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

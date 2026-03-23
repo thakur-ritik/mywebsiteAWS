@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<%- include('partials/nav') %>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag">What We Offer</span>
+    <h1>Our <span class="accent">Services</span></h1>
+    <p>From concept to deployment — we handle every aspect of your digital journey.</p>
+  </div>
+</section>
+
+<section class="services-section services-page">
+  <div class="container">
+    <div class="services-grid large">
+      <% services.forEach(s => { %>
+      <div class="service-card">
+        <div class="service-icon large-icon"><%= s.icon %></div>
+        <h3><%= s.title %></h3>
+        <p><%= s.desc %></p>
+        <ul class="service-features">
+          <li>✓ Custom tailored to your needs</li>
+          <li>✓ Delivered on time, every time</li>
+          <li>✓ Post-launch support included</li>
+        </ul>
+        <a href="/contact" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block;">Get a Quote</a>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2>Not Sure What You Need?</h2>
+    <p>Talk to our experts — we'll guide you to the perfect solution.</p>
+    <a href="/contact" class="btn btn-primary">Book a Free Consultation</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

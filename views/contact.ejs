@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<%- include('partials/nav') %>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag">Get In Touch</span>
+    <h1>Contact <span class="accent">Us</span></h1>
+    <p>Have a project in mind? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <h3>Reach Us Directly</h3>
+      <div class="contact-item">📧 <span>hello@nexawave.com</span></div>
+      <div class="contact-item">📞 <span>+91 98765 43210</span></div>
+      <div class="contact-item">📍 <span>Bangalore, India 🇮🇳</span></div>
+      <div class="contact-item">⏰ <span>Mon–Fri, 9am–6pm IST</span></div>
+      <div class="contact-social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <% if (message) { %>
+        <div class="success-msg"><%= message %></div>
+      <% } %>
+      <form action="/contact" method="POST" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Aryan Sharma" required/>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="aryan@email.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="Web Development Project" required/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Send Message →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

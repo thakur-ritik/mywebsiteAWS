@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<%- include('partials/nav') %>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag">Our Story</span>
+    <h1>About <span class="accent">NexaWave</span></h1>
+    <p>We are a team of passionate builders on a mission to create digital solutions that make a difference.</p>
+  </div>
+</section>
+
+<section class="about-story">
+  <div class="container about-grid">
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>Founded in 2016, NexaWave has grown from a small startup into a full-service digital agency serving clients across 28 countries. We combine technical excellence with strategic thinking to deliver solutions that actually work.</p>
+      <p>Our philosophy is simple: build things that last, ship on time, and never compromise on quality. Every line of code, every design decision, every deployment — done with purpose.</p>
+      <div class="about-values">
+        <div class="value-item">⚡ <strong>Speed</strong> — We move fast without breaking things</div>
+        <div class="value-item">🎯 <strong>Precision</strong> — Every detail matters</div>
+        <div class="value-item">🤝 <strong>Integrity</strong> — We say what we mean</div>
+        <div class="value-item">🚀 <strong>Innovation</strong> — Always pushing the boundary</div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-card-stack">
+        <div class="about-card">🌍 Global Reach</div>
+        <div class="about-card">💡 Innovation First</div>
+        <div class="about-card">🏆 Award Winning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Team</span>
+      <h2>People Behind NexaWave</h2>
+    </div>
+    <div class="team-grid">
+      <% teamMembers.forEach(m => { %>
+      <div class="team-card">
+        <div class="team-avatar"><%= m.emoji %></div>
+        <h4><%= m.name %></h4>
+        <span><%= m.role %></span>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>
+</body>
+</html>
